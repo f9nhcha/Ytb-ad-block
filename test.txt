@@ -48,7 +48,7 @@ proxy-providers:
     type: http
     #path: ./test1.yaml
     url: https://raw.githubusercontent.com/SnapdragonLee/SystemProxy/master/dist/clash_config_extra.yaml
-    filter: "(?i)pool|gb"
+    filter: "(?i)pool|gb_53|gb_50" 
     exclude-filter: "(?i)expire|traffic"  
     interval: 3500
     health-check:
