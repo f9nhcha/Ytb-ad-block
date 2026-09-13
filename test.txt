@@ -1,0 +1,92 @@
+allow-lan: true
+external-controller: 0.0.0.0:9090
+log-level: info
+mixed-port: 7890
+mode: rule
+dns:
+  enable: true
+  listen: 0.0.0.0:53          # lắng nghe DNS trên mọi interface
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - "*.lan"
+    - "*.local"
+    - "localhost"
+    #- "192.168.31.1"
+    # thêm domain nội bộ nếu có
+ # nameserver:
+ #   - 8.8.8.8
+ #   - 1.1.1.1
+  fallback:
+    - tls://1.1.1.1
+    - tls://8.8.8.8
+  fallback-filter:
+    geoip: true
+    geoip-code: CN            # hoặc VN tùy nhu cầu
+proxy-providers:
+  proxy-test:
+    type: http
+    #path: ./test.yaml
+    url: https://raw.githubusercontent.com/SnapdragonLee/SystemProxy/master/dist/clash_config_extra.yaml
+    interval: 3600
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 1000    
+  proxy-test2:
+    type: http
+    #path: ./test1.yaml
+    url: https://raw.githubusercontent.com/SnapdragonLee/SystemProxy/master/dist/clash_config_extra_US.yaml
+    #filter: "(?i)GB|RU"
+    #exclude-filter: "(?i)expire|traffic"  
+    interval: 3500
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+  proxy-test1:
+    type: http
+    #path: ./test1.yaml
+    url: https://raw.githubusercontent.com/SnapdragonLee/SystemProxy/master/dist/clash_config_extra.yaml
+    filter: "(?i)pool"
+    exclude-filter: "(?i)expire|traffic"  
+    interval: 3500
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+proxy-groups:
+  - name: "proxy test"
+    type: select
+    use:
+     -  proxy-test
+  - name: "proxy ytb"
+    type: select
+    use:
+      - proxy-test1
+    proxies:                # thêm DIRECT ở đây
+      - DIRECT
+  - name: proxy ytb1
+    type: select
+    use:
+     -  proxy-test2    
+rules:
+  - 'DOMAIN,androidtvlauncherxfe-pa.googleapis.com,REJECT'
+  - 'DOMAIN,www.walaoke.com,proxy test'
+  - 'DOMAIN,savefrom.net ,proxy test'
+  - 'DOMAIN,vi.savefrom.net ,proxy test'
+  - 'DOMAIN,archive1.mozilla.org,REJECT'
+  - 'DOMAIN,download.mozilla.org,REJECT'
+  - 'DOMAIN,update.mozilla.org,REJECT'
+  - 'DOMAIN,aus5.mozilla.org,REJECT'
+  - 'DOMAIN-KEYWORD,bcp24,proxy test'
+  - 'DOMAIN-KEYWORD,reddit1,proxy test'
+  - 'DOMAIN-SUFFIX,googlevideo.com,proxy ytb'
+  - 'DOMAIN-KEYWORD,youtube,proxy ytb' 
+  - 'DOMAIN-KEYWORD,makeuseof,proxy test'
+  - 'DOMAIN-KEYWORD,xda,proxy test'
+  - 'DOMAIN-KEYWORD,xvideos,proxy test'
+  - 'DOMAIN-KEYWORD,pornhub,proxy test'
+  - 'DOMAIN-KEYWORD,gsmarena,proxy test'
+  - 'MATCH,DIRECT'
+
