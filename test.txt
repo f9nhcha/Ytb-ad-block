@@ -59,7 +59,7 @@ proxy-groups:
   - name: "proxy test"
     type: select
     use:
-     -  proxy-testr
+     -  proxy-test
   - name: "proxy ytb"
     type: select
     use:
