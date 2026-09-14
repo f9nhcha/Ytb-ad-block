@@ -48,8 +48,8 @@ proxy-providers:
     type: http
     #path: ./test1.yaml
     url: https://raw.githubusercontent.com/SnapdragonLee/SystemProxy/master/dist/clash_config_extra.yaml
-    filter: "(?i)gb_53" 
-    exclude-filter: "(?i)expire|traffic"  
+    filter: "(?i)gb" 
+    #exclude-filter: "(?i)expire|traffic"  
     interval: 3500
     health-check:
       enable: true
@@ -66,15 +66,15 @@ proxy-groups:
       - proxy-test1
     proxies:                # thêm DIRECT ở đây
       - DIRECT
-  - name: proxy ytb1
+  - name: proxy test2
     type: select
     use:
      -  proxy-test2    
 rules:
   - 'DOMAIN,androidtvlauncherxfe-pa.googleapis.com,REJECT'
   - 'DOMAIN,www.walaoke.com,proxy test'
-  - 'DOMAIN,savefrom.net ,proxy test'
-  - 'DOMAIN,vi.savefrom.net ,proxy test'
+  - 'DOMAIN,savefrom.net,proxy test'
+  - 'DOMAIN,vi.savefrom.net,proxy test'
   - 'DOMAIN,archive1.mozilla.org,REJECT'
   - 'DOMAIN,download.mozilla.org,REJECT'
   - 'DOMAIN,update.mozilla.org,REJECT'
