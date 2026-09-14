@@ -18,9 +18,9 @@ dns:
     - clash-c68936.dns.nextdns.io
   # - 8.8.8.8
   # - 1.1.1.1
-  fallback:
-    - tls://1.1.1.1
-    - tls://8.8.8.8
+  #fallback:
+    #- tls://1.1.1.1
+    #- tls://8.8.8.8
   fallback-filter:
     geoip: true
     geoip-code: CN            # hoặc VN tùy nhu cầu
