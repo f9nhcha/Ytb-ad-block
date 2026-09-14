@@ -14,7 +14,8 @@ dns:
     - "localhost"
     #- "192.168.31.1"
     # thêm domain nội bộ nếu có
- # nameserver:
+ nameserver:
+     - clash-c68936.dns.nextdns.io
  #   - 8.8.8.8
  #   - 1.1.1.1
   fallback:
