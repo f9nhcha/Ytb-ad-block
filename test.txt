@@ -16,8 +16,8 @@ dns:
     # thêm domain nội bộ nếu có
   nameserver:
     - clash-c68936.dns.nextdns.io
- #  - 8.8.8.8
- #  - 1.1.1.1
+  # - 8.8.8.8
+  # - 1.1.1.1
   fallback:
     - tls://1.1.1.1
     - tls://8.8.8.8
