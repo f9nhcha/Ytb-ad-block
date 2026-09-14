@@ -18,7 +18,7 @@ dns:
     - clash-c68936.dns.nextdns.io
   # - 8.8.8.8
   # - 1.1.1.1
-  #fallback:
+  #1fallback:
     #- tls://1.1.1.1
     #- tls://8.8.8.8
   fallback-filter:
