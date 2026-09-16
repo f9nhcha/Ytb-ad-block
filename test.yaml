@@ -49,7 +49,7 @@ proxy-providers:
     type: http
     #path: ./test1.yaml
     url: https://raw.githubusercontent.com/SnapdragonLee/SystemProxy/master/dist/clash_config_extra.yaml
-    filter: "(?i)gb_"
+    filter: "(?i)gb_73"
     #09|gb_13|gb_14|gb_15|gb_16|gb_18|gb_19|gb_22|gb_24|gb_27|gb_28|gb_29" 
     #exclude-filter: "(?i)expire|traffic"  
     interval: 3500
@@ -66,8 +66,8 @@ proxy-groups:
     type: select
     use:
       - proxy-test1
-    proxies:                # thêm DIRECT ở đây
-      - DIRECT
+    #proxies:                # thêm DIRECT ở đây
+      #- DIRECT
   - name: proxy test3
     type: select
     use:
