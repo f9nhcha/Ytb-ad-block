@@ -63,11 +63,11 @@ proxy-groups:
     use:
      -  proxy-test
   - name: "proxy ytb"
-    type: load-balance
+    type: url-test
     use:
       - proxy-test1
-    proxies:                # thêm DIRECT ở đây
-      - DIRECT
+    #proxies:                # thêm DIRECT ở đây
+      #- DIRECT
   - name: proxy test3
     type: select
     use:
