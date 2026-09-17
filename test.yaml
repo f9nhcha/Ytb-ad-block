@@ -64,10 +64,10 @@ proxy-groups:
      -  proxy-test
   - name: "proxy ytb"
     type: select
-    use:
-      - proxy-test1
-    #proxies:                # thêm DIRECT ở đây
-      #- DIRECT
+    #use:
+      #- proxy-test1
+    proxies:                # thêm DIRECT ở đây
+      - DIRECT
   - name: proxy test3
     type: select
     use:
