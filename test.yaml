@@ -15,7 +15,7 @@ dns:
     #- "192.168.31.1"
     # thêm domain nội bộ nếu có
   nameserver:
-    - tls://bravis--4k--vh21-c68936.dns.nextdns.io
+    - tls://itel-c68936.dns.nextdns.io
     #- 8.8.8.8
     #- 1.1.1.1
   #fallback:
@@ -23,12 +23,13 @@ dns:
     #- tls://8.8.8.8
   fallback-filter:
     geoip: true
-    geoip-code: CN            # hoặc VN tùy nhu cầu
+    geoip-code: VN            # hoặc VN tùy nhu cầu
 proxy-providers:
   proxy-test:
     type: http
     #path: ./test.yaml
     url: https://raw.githubusercontent.com/SnapdragonLee/SystemProxy/master/dist/clash_config_extra.yaml
+    #filter: "(?i)HK"
     interval: 3600
     health-check:
       enable: true
@@ -38,7 +39,7 @@ proxy-providers:
     type: http
     #path: ./test1.yaml
     url: https://raw.githubusercontent.com/SnapdragonLee/SystemProxy/master/dist/clash_config_extra_US.yaml
-    #filter: "(?i)GB|RU"
+    #filter: "(?i)"
     #exclude-filter: "(?i)expire|traffic"  
     interval: 3500
     health-check:
@@ -49,9 +50,8 @@ proxy-providers:
     type: http
     #path: ./test1.yaml
     url: https://raw.githubusercontent.com/SnapdragonLee/SystemProxy/master/dist/clash_config_extra.yaml
-    filter: "(?i)gb_73|gb_72"
-    #09|gb_13|gb_14|gb_15|gb_16|gb_18|gb_19|gb_22|gb_24|gb_27|gb_28|gb_29" 
-    #exclude-filter: "(?i)expire|traffic"  
+    filter: "(?i)gb_" 
+    exclude-filter: "(?i)gb_43|gb_44|gb_46|gb_47|gb_60|gb_61|gb_62|gb_63|gb_68|gb_70"  
     interval: 3500
     health-check:
       enable: true
@@ -63,9 +63,9 @@ proxy-groups:
     use:
      -  proxy-test
   - name: "proxy ytb"
-    type: select
-    #use:
-      #- proxy-test1
+    type: load-balance
+    use:
+      - proxy-test1
     proxies:                # thêm DIRECT ở đây
       - DIRECT
   - name: proxy test3
