@@ -63,7 +63,7 @@ proxy-groups:
     use:
      -  proxy-test
   - name: "proxy ytb"
-    type: fallback
+    type: select
     use:
       - proxy-test1
     #proxies:                # thêm DIRECT ở đây
