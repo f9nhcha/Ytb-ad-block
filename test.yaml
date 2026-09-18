@@ -39,7 +39,7 @@ proxy-providers:
   proxy-test2:
     type: http
     #path: ./test1.yaml
-    url: https://raw.githubusercontent.com/SnapdragonLee/SystemProxy/master/dist/clash_config_extra_US.yaml
+    url: https://cdn.jsdelivr.net/gh/SnapdragonLee/SystemProxy@master/dist/clash_config_extra_US.yaml
     #filter: "(?i)"
     #exclude-filter: "(?i)expire|traffic"  
     interval: 3500
