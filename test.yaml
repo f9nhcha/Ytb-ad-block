@@ -53,7 +53,7 @@ proxy-providers:
     url: https://cdn.jsdelivr.net/gh/SnapdragonLee/SystemProxy@master/dist/clash_config_extra.yaml
     filter: "(?i)gb_" 
     exclude-filter: "(?i)gb_30|gb_32|gb_33|gb_34_0|gb_40|gb_43|gb_44|gb_46|gb_47|gb_48|gb_50|gb_56|gb_60|gb_61|gb_62|gb_63|gb_67|gb_68|gb_70"  
-    interval: 1800
+    interval: 3600
     health-check:
       enable: true
       url: https://www.gstatic.com/generate_204
@@ -68,7 +68,7 @@ proxy-groups:
     use:
       - proxy-test1
     url: 'http://www.gstatic.com/generate_204'
-    interval: 240
+    interval: 1800
     #proxies:                # thêm DIRECT ở đây
       #- DIRECT
   - name: proxy test3
