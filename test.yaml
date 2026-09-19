@@ -42,7 +42,7 @@ proxy-providers:
     url: https://cdn.jsdelivr.net/gh/SnapdragonLee/SystemProxy@master/dist/clash_config_extra_US.yaml
     #filter: "(?i)"
     #exclude-filter: "(?i)expire|traffic"  
-    interval: 3500
+    interval: 900
     health-check:
       enable: true
       url: https://www.gstatic.com/generate_204
@@ -53,7 +53,7 @@ proxy-providers:
     url: https://cdn.jsdelivr.net/gh/SnapdragonLee/SystemProxy@master/dist/clash_config_extra.yaml
     filter: "(?i)gb_" 
     exclude-filter: "(?i)gb_26|gb_30|gb_31|gb_32|gb_33|gb_34|gb_35|gb_37|gb_38|gb_39|gb_40|gb_41|gb_43|gb_46|gb_47|gb_48|gb_50|gb_51|gb_57|gb_58|gb_60|gb_61|gb_62|gb_65|gb_67|gb_68|gb_70|gb_74|gb_75|gb_76"  
-    interval: 3600
+    interval: 910
     health-check:
       enable: true
       url: https://www.gstatic.com/generate_204
