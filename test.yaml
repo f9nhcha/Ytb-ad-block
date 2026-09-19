@@ -68,7 +68,7 @@ proxy-groups:
     use:
       - proxy-test1
     url: 'http://www.gstatic.com/generate_204'
-    interval: 1800
+    interval: 450
     #proxies:                # thêm DIRECT ở đây
       #- DIRECT
   - name: proxy test3
