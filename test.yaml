@@ -15,7 +15,7 @@ dns:
     #- "192.168.31.1"
     # thêm domain nội bộ nếu có
   nameserver:
-    - tls://itel-c68936.dns.nextdns.io
+    - tls://bravia--4k--vh21-c68936.dns.nextdns.io
     #- 8.8.8.8
     #- 1.1.1.1
   #fallback:
@@ -72,9 +72,11 @@ proxy-groups:
     #proxies:                # thêm DIRECT ở đây
       #- DIRECT
   - name: proxy ytb1
-    type: select
+    type: url-test
     use:
      -  proxy-test2    
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 180
 rules:
   - 'DOMAIN,androidtvlauncherxfe-pa.googleapis.com,REJECT'
   - 'DOMAIN,www.walaoke.com,proxy test'
