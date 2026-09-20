@@ -39,9 +39,9 @@ proxy-providers:
   proxy-test2:
     type: http
     #path: ./test1.yaml
-    url: https://cdn.jsdelivr.net/gh/SnapdragonLee/SystemProxy@master/dist/clash_config_extra_US.yaml
-    #filter: "(?i)"
-    #exclude-filter: "(?i)expire|traffic"  
+    url: https://cdn.jsdelivr.net/gh/f9nhcha/Ytb-ad-block@main/clash1.yaml
+    filter: "(?i)gb"
+    exclude-filter: "(?i)0.0|2.051|56.039|29.493|0.47|59.541|25.431|58.459|57.329|2.009|57.486|53.55|29.664|23.081|55.25|55.408|57.961|58.621"  
     interval: 900
     health-check:
       enable: true
@@ -71,7 +71,7 @@ proxy-groups:
     interval: 450
     #proxies:                # thêm DIRECT ở đây
       #- DIRECT
-  - name: proxy test3
+  - name: proxy ytb1
     type: select
     use:
      -  proxy-test2    
@@ -86,8 +86,8 @@ rules:
   - 'DOMAIN,aus5.mozilla.org,REJECT'
   - 'DOMAIN-KEYWORD,bcp24,proxy test'
   - 'DOMAIN-KEYWORD,reddit1,proxy test'
-  - 'DOMAIN-SUFFIX,googlevideo.com,proxy ytb'
-  - 'DOMAIN-KEYWORD,youtube,proxy ytb' 
+  - 'DOMAIN-SUFFIX,googlevideo.com,proxy ytb1'
+  - 'DOMAIN-KEYWORD,youtube,proxy ytb1' 
   - 'DOMAIN-KEYWORD,makeuseof,proxy test'
   - 'DOMAIN-KEYWORD,xda,proxy test'
   - 'DOMAIN-KEYWORD,xvideos,proxy test'
