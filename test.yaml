@@ -41,8 +41,8 @@ proxy-providers:
     type: http
     #path: ./test1.yaml
     url: https://cdn.jsdelivr.net/gh/f9nhcha/Ytb-ad-block@main/clash1.yaml
-    filter: "(?i)gb"
-    exclude-filter: "(?i)0.0|2.051|56.039|29.493|0.47|59.541|25.431|58.459|57.329|2.009|57.486|53.55|29.664|23.081|55.25|55.408|57.961|58.621"  
+    #filter: "(?i)"
+    #exclude-filter: "(?i)"  
     interval: 900
     health-check:
       enable: true
@@ -52,8 +52,8 @@ proxy-providers:
     type: http
     #path: ./test1.yaml
     url: https://cdn.jsdelivr.net/gh/SnapdragonLee/SystemProxy@master/dist/clash_config_extra.yaml
-    filter: "(?i)gb_" 
-    exclude-filter: "(?i)gb_26|gb_30|gb_31|gb_32|gb_33|gb_34|gb_35|gb_37|gb_38|gb_39|gb_40|gb_41|gb_43|gb_46|gb_47|gb_48|gb_50|gb_51|gb_57|gb_58|gb_60|gb_61|gb_62|gb_65|gb_67|gb_68|gb_70|gb_74|gb_75|gb_76"  
+    filter: "(?i)🇬🇧GB_50_0@49|🇬🇧GB_49_0@48|🇬🇧GB_51_0@50|🇬🇧GB_12_0@11🇬🇧GB_22_0@21|🇧🇬BG_02_1@1|🇬🇧GB_09_0@8|🇬🇧GB_10_0@9|🇬🇧GB_11_0@10🇬🇧GB_12_0@11🇬🇧GB_13_0@12|🇬🇧GB_15_0@14|🇬🇧GB_17_0@16|🇬🇧GB_18_0@17|🇬🇧GB_19_0@18|🇬🇧GB_20_0@19|🇬🇧GB_21_0@20|🇬🇧GB_22_0@21" 
+    #exclude-filter: "(?i)"  
     interval: 910
     health-check:
       enable: true
@@ -68,15 +68,16 @@ proxy-groups:
     type: url-test
     use:
       - proxy-test1
-      - proxy-test2
+      #- proxy-test2
     url: 'http://www.gstatic.com/generate_204'
     interval: 450
     #proxies:                # thêm DIRECT ở đây
       #- DIRECT
   - name: proxy ytb1
-    type: url-test
+    type: select
     use:
-     -  proxy-test2    
+     - proxy-test2
+     #- proxy-test1    
     url: 'http://www.gstatic.com/generate_204'
     interval: 180
 rules:
@@ -90,8 +91,8 @@ rules:
   - 'DOMAIN,aus5.mozilla.org,REJECT'
   - 'DOMAIN-KEYWORD,bcp24,proxy test'
   - 'DOMAIN-KEYWORD,reddit1,proxy test'
-  - 'DOMAIN-SUFFIX,googlevideo.com,proxy ytb1'
-  - 'DOMAIN-KEYWORD,youtube,proxy ytb1' 
+  - 'DOMAIN-SUFFIX,googlevideo.com,proxy ytb'
+  - 'DOMAIN-KEYWORD,youtube,proxy ytb' 
   - 'DOMAIN-KEYWORD,makeuseof,proxy test'
   - 'DOMAIN-KEYWORD,xda,proxy test'
   - 'DOMAIN-KEYWORD,xvideos,proxy test'
