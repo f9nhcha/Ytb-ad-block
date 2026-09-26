@@ -52,7 +52,7 @@ proxy-providers:
     type: http
     #path: ./test1.yaml
     url: https://cdn.jsdelivr.net/gh/SnapdragonLee/SystemProxy@master/dist/clash_config_extra.yaml
-    filter: "(?i)🇬🇧GB_51_0@50|🇬🇧GB_12_0@11🇬🇧GB_22_0@21|🇧🇬BG_02_1@1|🇬🇧GB_09_0@8|🇬🇧GB_10_0@9|🇬🇧GB_11_0@10🇬🇧GB_12_0@11🇬🇧GB_13_0@12|🇬🇧GB_15_0@14|🇬🇧GB_17_0@16|🇬🇧GB_18_0@17|🇬🇧GB_19_0@18|🇬🇧GB_20_0@19|🇬🇧GB_21_0@20|🇬🇧GB_22_0@21" 
+    filter: "(?i)🇬🇧GB_51_0@50|🇬🇧GB_12_0@11🇬🇧|🇧🇬BG_02_1@1|🇬🇧GB_09_0@8|🇬🇧GB_10_0@9|🇬🇧GB_11_0@10🇬🇧GB_12_0@11🇬🇧GB_13_0@12|🇬🇧GB_15_0@14|🇬🇧GB_17_0@16|🇬🇧GB_18_0@17|🇬🇧GB_19_0@18|🇬🇧GB_21_0@20" 
     #exclude-filter: "(?i)"  
     interval: 910
     health-check:
