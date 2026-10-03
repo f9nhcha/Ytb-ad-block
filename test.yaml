@@ -14,14 +14,14 @@ dns:
     - "localhost"
     #- "192.168.31.1"
     # thêm domain nội bộ nếu có
-  nameserver:
-    - tls://itel1-ce4e88.dns.nextdns.io
+  #nameserver:
+    #- tls://dns.google
 #bravia--4k--vh21-c68936.dns.nextdns.io
     #- 8.8.8.8
     #- 1.1.1.1
-  #fallback:
-    #- tls://1.1.1.1
-    #- tls://8.8.8.8
+  fallback:
+    - tls://1.1.1.1
+    - tls://8.8.8.8
   fallback-filter:
     geoip: true
     geoip-code: VN            # hoặc VN tùy nhu cầu
