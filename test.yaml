@@ -65,8 +65,8 @@ proxy-groups:
     use:
      -  proxy-test
   - name: "proxy ytb"
-    #type: url-test
-    type: select
+    type: url-test
+    #type: select
     use:
       - proxy-test1
       - proxy-test2
