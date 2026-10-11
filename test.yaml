@@ -29,7 +29,6 @@ proxy-providers:
   proxy-test:
     type: http
     #path: ./test.yaml
-    #url: https://raw.githubusercontent.com/SnapdragonLee/SystemProxy/master/dist/clash_config_extra.yaml
     url: https://cdn.jsdelivr.net/gh/SnapdragonLee/SystemProxy@master/dist/clash_config_extra.yaml
     #filter: "(?i)HK"
     interval: 3600
@@ -37,39 +36,29 @@ proxy-providers:
       enable: true
       url: https://www.gstatic.com/generate_204
       interval: 1000    
-  proxy-test2:
+  proxy-test1:
     type: http
     #path: ./test1.yaml
-    url: https://cdn.jsdelivr.net/gh/f9nhcha/Ytb-ad-block@main/clash1.yaml
+    url: https://cdn.jsdelivr.net/gh/f9nhcha/Ytb-ad-block@main/clash1.yaml  
     #exclude-filter: "(?i)"  
     interval: 900
     health-check:
       enable: true
       url: https://www.gstatic.com/generate_204
-      interval: 300
-  proxy-test1:
-    type: http
-    #path: ./test1.yaml
-    url: https://cdn.jsdelivr.net/gh/SnapdragonLee/SystemProxy@master/dist/clash_config_extra.yaml
-    #filter: "(?i)🇬🇧GB_12_0@11🇬🇧|🇧🇬BG_02_1@1|🇬🇧GB_09_0@8|🇬🇧GB_10_0@9|🇬🇧GB_11_0@10🇬🇧GB_12_0@11🇬🇧GB_13_0@12|🇬🇧GB_15_0@14|🇬🇧GB_17_0@16|🇬🇧GB_18_0@17|🇬🇧GB_19_0@18|🇬🇧GB_21_0@20" 
-    #exclude-filter: "(?i)"  
-    interval: 910
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
+      interval: 300 
 proxy-groups:
   - name: "proxy test"
     type: select
     use:
      -  proxy-test
+     -  proxy-test1     
   - name: "proxy ytb"
-    type: url-test
-    #type: select
+    #type: url-test
+    type: select
     use:
+      - proxy-test
       - proxy-test1
-      - proxy-test2
-    filter: "(?i)🇯🇵JP-149.22.87.241-0120|🇳🇱NL-109.201.152.181-0098|GB-146.70.61.37-0059|NL-193.29.139.147-0086|GB-82.38.31.202-0097|GB-82.38.31.194-0089|GB-82.38.31.10-0080|GB-82.38.31.210-0064|GB-82.38.31.149-0085|GB-82.38.31.155-0067|GB-82.38.31.16-0096|GB-82.38.31.176-0141|GB-82.38.31.179-0105|🇬🇧GB_12_0@11🇬🇧|🇧🇬BG_02_1@1|🇬🇧GB_09_0@8|🇬🇧GB_10_0@9|🇬🇧GB_11_0@10🇬🇧GB_12_0@11🇬🇧GB_13_0@12|🇬🇧GB_15_0@14|🇬🇧GB_17_0@16|🇬🇧GB_18_0@17|🇬🇧GB_19_0@18|🇬🇧GB_21_0@20"
+    filter: "(?i)🇯🇵JP-149.22.87.240-0108|🇺🇸US_187_0@186|🇯🇵JP-149.22.87.241-0120|🇳🇱NL-109.201.152.181-0098|GB-146.70.61.37-0059|NL-193.29.139.147-0086|GB-82.38.31.202-0097|GB-82.38.31.194-0089|GB-82.38.31.10-0080|GB-82.38.31.210-0064|GB-82.38.31.149-0085|GB-82.38.31.155-0067|GB-82.38.31.16-0096|GB-82.38.31.176-0141|GB-82.38.31.179-0105|🇬🇧GB_12_0@11🇬🇧|🇧🇬BG_02_1@1|🇬🇧GB_09_0@8|🇬🇧GB_10_0@9|🇬🇧GB_11_0@10🇬🇧GB_12_0@11🇬🇧GB_13_0@12|🇬🇧GB_15_0@14|🇬🇧GB_17_0@16|🇬🇧GB_18_0@17|🇬🇧GB_19_0@18|🇬🇧GB_21_0@20"
     url: 'http://www.gstatic.com/generate_204'
     interval: 450
     #proxies:                # thêm DIRECT ở đây
@@ -77,8 +66,8 @@ proxy-groups:
   - name: proxy ytb1
     type: select
     use:
-     - proxy-test2
-     #- proxy-test1    
+      - proxy-test  
+      - proxy-test1
     url: 'http://www.gstatic.com/generate_204'
     interval: 180
 rules:
