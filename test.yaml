@@ -53,8 +53,8 @@ proxy-groups:
      -  proxy-test
      -  proxy-test1     
   - name: "proxy ytb"
-    #type: url-test
-    type: select
+    type: url-test
+    #type: select
     use:
       - proxy-test
       - proxy-test1
