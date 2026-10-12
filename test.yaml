@@ -81,7 +81,7 @@ proxy-groups:
   interval: 450
 rules:
 - DOMAIN-KEYWORD,gavangtvttbdf,proxy test
-- DOMAIN,androidtvlauncherxfe-pa.googleapis.com,proxy test
+#- DOMAIN,androidtvlauncherxfe-pa.googleapis.com,proxy test
 - DOMAIN,androidtvlauncherxfe-pa.googleapis.com,REJECT
 - DOMAIN,www.walaoke.com,proxy test
 - DOMAIN,savefrom.net,proxy test
