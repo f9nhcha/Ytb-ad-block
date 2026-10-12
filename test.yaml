@@ -2,7 +2,7 @@ mode: rule
 mixed-port: 7897
 allow-lan: true
 log-level: silent
-ipv6: true
+ipv6: false
 external-controller: 0.0.0.0:9097
 secret: set-your-secret
 unified-delay: false
