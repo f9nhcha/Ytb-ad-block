@@ -6,6 +6,16 @@ ipv6: false
 external-controller: 0.0.0.0:9097
 secret: set-your-secret
 unified-delay: false
+external-controller-cors:
+  allow-origins:
+  - https://yacd.metacubex.one
+  - https://metacubex.github.io
+  - https://board.zash.run.place
+  - http://board.zash.run.place
+  - tauri://localhost
+  - http://tauri.localhost
+  - http://localhost:3000
+  allow-private-network: true
 external-controller-pipe: \\.\pipe\verge-mihomo-sidecar-release-65a5083e18f89f4e8a64b31df04bd32f45c7677a267ff759eeaeec1b93e6f424
 tun:
   auto-detect-interface: true
@@ -18,65 +28,25 @@ tun:
   stack: gvisor
   strict-route: false
   enable: false
-external-controller-cors:
-  allow-origins:
-  - https://yacd.metacubex.one
-  - https://metacubex.github.io
-  - https://board.zash.run.place
-  - http://board.zash.run.place
-  - tauri://localhost
-  - http://tauri.localhost
-  - http://localhost:3000
-  allow-private-network: true
-hosts:
-  androidtvlauncherxfe-pa.googleapis.com: 127.0.0.1
 profile:
   store-selected: true
 dns:
   enable: true
-  listen: :53
+  listen: 0.0.0.0:53
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter:
   - '*.lan'
   - '*.local'
-  - '*.arpa'
-  - 'time.*.com'
-  - 'ntp.*.com'
-  - 'time.*.com'
-  - '+.market.xiaomi.com'
-  - localhost.ptlogin2.qq.com
-  - '*.msftncsi.com'
-  - www.msftconnecttest.com
+  - localhost
   nameserver:
-  - tls://one.one.one.one
-  - 8.8.8.8
-  - https://doh.pub/dns-query
-  - https://dns.alidns.com/dns-query
+  - tls://dns.google
   fallback:
   - tls://1.1.1.1
   - tls://8.8.8.8
   fallback-filter:
-    domain: []
     geoip: true
     geoip-code: CN
-    ipcidr:
-    - 240.0.0.0/4
-    - 0.0.0.0/32
-  default-nameserver:
-  - system
-  - 223.6.6.6
-  - 8.8.8.8
-  - 2400:3200::1
-  - 2001:4860:4860::8888
-  fake-ip-filter-mode: blacklist
-  fake-ip-range6: fdfe:dcba:9876::1/64
-  ipv6: true
-  proxy-server-nameserver:
-  - https://doh.pub/dns-query
-  - https://dns.alidns.com/dns-query
-  - tls://223.5.5.5
-  use-hosts: true
 proxies: []
 proxy-providers:
   proxy-test:
@@ -109,17 +79,17 @@ proxy-groups:
   filter: (?i)🇯🇵JP-149.22.87.240-0108|🇺🇸US_187_0@186|🇯🇵JP-149.22.87.241-0120|🇳🇱NL-109.201.152.181-0098|GB-146.70.61.37-0059|NL-193.29.139.147-0086|GB-82.38.31.202-0097|GB-82.38.31.194-0089|GB-82.38.31.10-0080|GB-82.38.31.210-0064|GB-82.38.31.149-0085|GB-82.38.31.155-0067|GB-82.38.31.16-0096|GB-82.38.31.176-0141|GB-82.38.31.179-0105|🇬🇧GB_12_0@11🇬🇧|🇧🇬BG_02_1@1|🇬🇧GB_09_0@8|🇬🇧GB_10_0@9|🇬🇧GB_11_0@10🇬🇧GB_12_0@11🇬🇧GB_13_0@12|🇬🇧GB_15_0@14|🇬🇧GB_17_0@16|🇬🇧GB_18_0@17|🇬🇧GB_19_0@18|🇬🇧GB_21_0@20
   url: http://www.gstatic.com/generate_204
   interval: 450
-- name: proxy ytb1
+- name: google tv
   type: select
   use:
   - proxy-test
   - proxy-test1
+  filter: (?i)🇭🇰HK_98_1@97
   url: http://www.gstatic.com/generate_204
   interval: 180
 rules:
 - DOMAIN-KEYWORD,gavangtvttbdf,proxy test
-#- DOMAIN,androidtvlauncherxfe-pa.googleapis.com,proxy test
-#- DOMAIN,androidtvlauncherxfe-pa.googleapis.com,REJECT
+- DOMAIN,androidtvlauncherxfe-pa.googleapis.com,google tv
 - DOMAIN,www.walaoke.com,proxy test
 - DOMAIN,savefrom.net,proxy test
 - DOMAIN,vi.savefrom.net,proxy test
