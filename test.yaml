@@ -86,7 +86,7 @@ proxy-groups:
   - proxy-test1
   #filter: "(?i)HK_89_1@88"
   proxies:
-    -REJECT
+    - REJECT
   url: http://www.gstatic.com/generate_204
   interval: 180
 rules:
