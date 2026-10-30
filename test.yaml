@@ -16,18 +16,6 @@ external-controller-cors:
     - http://tauri.localhost
     - http://localhost:3000
   allow-private-network: true
-external-controller-pipe: \\.\pipe\verge-mihomo-sidecar-release-65a5083e18f89f4e8a64b31df04bd32f45c7677a267ff759eeaeec1b93e6f424
-tun:
-  auto-detect-interface: true
-  auto-route: true
-  device: Mihomo
-  dns-hijack:
-    - any:53
-  mtu: 1500
-  route-exclude-address: []
-  stack: gvisor
-  strict-route: false
-  enable: false
 profile:
   store-selected: true
 dns:
