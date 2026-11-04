@@ -108,13 +108,7 @@ proxy-groups:
     proxies:
       - REJECT
     url: https://www.gstatic.com/generate_204
-    interval: 180
-  - name: pornhub
-    type: select
-    use:
-      - proxy-test
-      - proxy-test1
-      - proxy-test2
+    interval: 180  
 rules:
   - DOMAIN-KEYWORD,gavangtvttbdf,proxy test
   - DOMAIN,androidtvlauncherxfe-pa.googleapis.com,google tv
