@@ -27,7 +27,7 @@ dns:
     - "*.lan"
     - "*.local"
     - localhost
-  nameserver:
+  direct-nameserver:
     - tls://sony-ce4e88.dns.nextdns.io
   proxy-server-nameserver:
     - tls://dns.google
