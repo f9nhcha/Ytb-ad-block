@@ -29,7 +29,7 @@ dns:
     - "*.local"
     - localhost
   direct-nameserver:
-    - tls://msi-ce4e88.dns.nextdns.io
+    - tls://bravia-ce4e88.dns.nextdns.io
   proxy-server-nameserver:
     - tls://dns.google
   fallback:
